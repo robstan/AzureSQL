@@ -14,10 +14,8 @@ Change Log:
 			+ some bug fixes - see GitHub for more information 
 */
 
-if object_id('AzureSQLMaintenance') is null
-	exec('create procedure AzureSQLMaintenance as /*dummy procedure body*/ select 1;')	
-GO
-ALTER PROCEDURE [AzureSQLMaintenance]
+
+CREATE OR ALTER PROCEDURE [_deploy].[AzureSQLMaintenance]
 	(
 		@operation nvarchar(10) = null,
 		@mode nvarchar(10) = 'smart',
